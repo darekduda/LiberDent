@@ -1,0 +1,55 @@
+﻿@model IEnumerable<LiberDent.Data.Data.CMS.Powitanie>
+
+@{
+    ViewData["Title"] = "Lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Lista</h6>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Utwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NaglowekPowitalny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrescPowitalna1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrescPowitalna2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywny)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NaglowekPowitalny)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrescPowitalna1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrescPowitalna2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywny)
+                </td>
+                <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.IdPowitania">Edytuj</a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.IdPowitania">Szczegóły</a> |
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.IdPowitania">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

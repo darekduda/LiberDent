@@ -1,0 +1,57 @@
+﻿@model LiberDent.Data.Data.CMS.Kontakt
+
+@{
+    ViewData["Title"] = "Dodaj nowy";
+}
+
+<h6>Dodaj nowy</h6>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TytułKontakt" class="control-label"></label>
+                <input asp-for="TytułKontakt" class="form-control" />
+                <span asp-validation-for="TytułKontakt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumerTelefonu" class="control-label"></label>
+                <input asp-for="NumerTelefonu" class="form-control" />
+                <span asp-validation-for="NumerTelefonu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NazwaTelefonu" class="control-label"></label>
+                <input asp-for="NazwaTelefonu" class="form-control" />
+                <span asp-validation-for="NazwaTelefonu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrescKontaktu" class="control-label"></label>
+                <input asp-for="TrescKontaktu" class="form-control" />
+                <span asp-validation-for="TrescKontaktu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PozycjaWyswietlania" class="control-label"></label>
+                <input asp-for="PozycjaWyswietlania" class="form-control" />
+                <span asp-validation-for="PozycjaWyswietlania" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CzyAktywny" /> @Html.DisplayNameFor(model => model.CzyAktywny)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

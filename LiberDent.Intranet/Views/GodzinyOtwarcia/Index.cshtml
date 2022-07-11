@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LiberDent.Data.Data.CMS.GodzinyOtwarcia>
+
+@{
+    ViewData["Title"] = "Lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Lista</h6>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Utwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dzien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GodzinaOtwarciaOd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GodzinaOtwarciaDo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PozycjaWyswietlania)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywny)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dzien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GodzinaOtwarciaOd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GodzinaOtwarciaDo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PozycjaWyswietlania)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywny)
+                </td>
+                <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.IdGodzinyOtwarcia">Edytuj</a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.IdGodzinyOtwarcia">Szczegóły</a> |
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.IdGodzinyOtwarcia">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

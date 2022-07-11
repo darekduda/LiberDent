@@ -1,0 +1,24 @@
+﻿@model LiberDent.Data.Data.Slownikowe.RodzajeWizyty
+
+@{
+    ViewData["Title"] = "Szczegóły";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Szczegóły</h6>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdRodzajeWizyty">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

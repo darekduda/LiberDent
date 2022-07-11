@@ -1,0 +1,38 @@
+﻿@model LiberDent.Intranet.Models.Account.ManageViewModel.DaneLekarzaViewModel
+@using LiberDent.Intranet.Views
+@{
+    ViewData["Title"] = "Moje dane lekarza";
+    ViewData.AddActivePage(ManageNavPages.DaneUzytkownika);
+}
+
+<h4>@ViewData["Title"]</h4>
+@*@Html.Partial("_StatusMessage", Model.StatusMessage)*@
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group fontStyle">
+                <label asp-for="DaneLekarza.Opis"></label>
+                <input asp-for="DaneLekarza.Opis" class="form-control" />
+                <span asp-validation-for="DaneLekarza.Opis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaneLekarza.IdTytulNaukowy" class="control-label"></label>
+                <select asp-for="DaneLekarza.IdTytulNaukowy" class="form-control">
+                    @{
+                        foreach (var item in Model.TytulNaukowy)
+                        {
+                            <option value="@item.IdTytulNaukowy">@item.Nazwa</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="DaneLekarza.IdTytulNaukowy" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Zapisz zmiany</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

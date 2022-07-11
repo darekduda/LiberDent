@@ -1,0 +1,49 @@
+﻿@model LiberDent.Data.Data.CMS.Powitanie
+
+@{
+    ViewData["Title"] = "Edytuj";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Edytuj</h6>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdPowitania" />
+            <div class="form-group">
+                <label asp-for="NaglowekPowitalny" class="control-label"></label>
+                <input asp-for="NaglowekPowitalny" class="form-control" />
+                <span asp-validation-for="NaglowekPowitalny" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrescPowitalna1" class="control-label"></label>
+                <input asp-for="TrescPowitalna1" class="form-control" />
+                <span asp-validation-for="TrescPowitalna1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrescPowitalna2" class="control-label"></label>
+                <input asp-for="TrescPowitalna2" class="form-control" />
+                <span asp-validation-for="TrescPowitalna2" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CzyAktywny" /> @Html.DisplayNameFor(model => model.CzyAktywny)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

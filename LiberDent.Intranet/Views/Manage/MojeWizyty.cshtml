@@ -1,0 +1,172 @@
+﻿@model LiberDent.Intranet.Models.Account.ManageViewModel.MojeWizytyViewModel
+@using LiberDent.Intranet.BusinessLogic
+@{
+    ViewData["Title"] = "Moje Wizyty";
+    Layout = "~/Views/Manage/_Layout.cshtml";
+    int? godzOtw = KalendarzLogic.sprawdzGodzineOtwarcia(Model.WybranyDzien, Model.GodzinyOtwarciaLista);
+    int? godzZam = KalendarzLogic.sprawdzGodzineZamkniecia(Model.WybranyDzien, Model.GodzinyOtwarciaLista);
+}
+    <style>
+        td, th {
+            text-align: -webkit-center;
+        }
+    </style>
+    <h4>@ViewData["Title"]</h4>
+<div class="table-responsive container">
+    <table class="table table-bordered" style="min-width:321px">
+        <thead style="height:150px">
+            <tr >
+                <td>
+                    <a class="btn btn-outline-info" 
+                       asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zmniejszMiesiac(Model.WybranyDzien).ToString()"><<</a>
+                </td>
+                @*<td>
+                        <a class="btn-small light-blue lighten-2" style="color:#757575"/5eaow
+                           asp-controller="Home" asp-action="UmowWizyte" asp-route-str="@zmniejszMiesiac()"><<</a>
+                    </td>*@
+                <td colspan="5" style="text-align: center">
+                    @Model.NazwaMiesiaca @Model.WybranyDzien.Year
+                </td>
+                <td style="text-align:right">
+                    <form>
+                        <a class="btn btn-outline-info"
+                           asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zwiekszMiesiac(Model.WybranyDzien).ToString()">>></a>
+                    </form>
+                </td>
+            </tr>
+        </thead>
+    </table>
+    <table class="table table-bordered" style="min-width:321px">
+        <tbody>
+            <tr >
+                <td style="text-align:center">
+                    Pon
+                </td>
+                <td style="text-align:center">
+                    Wt
+                </td>
+                <td style="text-align:center">
+                    Śr
+                </td>
+                <td style="text-align:center">
+                    Czw
+                </td>
+                <td style="text-align:center">
+                    Pt
+                </td>
+                <td style="text-align:center">
+                    Sob
+                </td>
+                <td style="text-align:center">
+                    Nd
+                </td>
+            </tr>
+            <tr >
+
+                @for (int a = 1; a < Model.PierwszyDzienMiesiaca; a++)
+                {
+                    @:<td @{if ((a == 6) || (a == 7)) { @: >
+                    }
+                @: </td>
+}
+}
+                @for (int i = 1; i <= Model.DniWWybranymMiesiacu; i++)
+                {
+                    DateTime sprawdzanyDzien = new DateTime(Model.WybranyDzien.Year, Model.WybranyDzien.Month, i);
+                    if (sprawdzanyDzien.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        @:
+                        <td  width="14%"  align="center">
+                            <form asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zmienDzien(@i,Model.WybranyDzien).ToString()" ><button class="btn btn-outline-danger" name="@i" disabled>@i</button></form>
+                        </td>
+                    @:</tr><tr>
+                    }
+                    else if (sprawdzanyDzien.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        @:
+                        <td  width="14%"  align="center">
+                            <form asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zmienDzien(@i,Model.WybranyDzien).ToString()" ><button class="btn btn-outline-warning" name="@i" disabled>@i</button></form>
+                        </td>
+                    }
+                    else
+                    {
+                        @:
+                        <td width="14%" align="center">
+                            <form asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zmienDzien(@i,Model.WybranyDzien).ToString()" ><button class="btn btn-outline-success"name="@i">@i</button></form>
+                        </td>
+                    }
+                }
+                @for (int a = 1; a <= 7 - Model.OstatniDzienMiesiaca; a++)
+                {
+                    @:<td @{if (a + Model.OstatniDzienMiesiaca == 7) { @: 
+                          } else if (a + Model.OstatniDzienMiesiaca == 6) { @: 
+                          } @:></td>
+}
+}
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-responsive  container" style="margin-top:20px">
+    <table class="table table-bordered " style="min-width:321px">
+        <thead style="height:150px">
+            <tr >
+                <td>
+                    <a class="btn btn-outline-info" 
+                       asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zmniejszZwiekszDzien(-1,Model.WybranyDzien).ToString()"><<</a>
+                </td>
+                <td colspan="2" style="text-align: center">
+                    @Model.WybranyDzien.Day @Model.NazwaMiesiaca @Model.WybranyDzien.Year
+                </td>
+                <td style="text-align:right">
+                    <a class="btn btn-outline-info"
+                       asp-controller="Manage" asp-action="MojeWizyty" asp-route-str="@KalendarzLogic.zmniejszZwiekszDzien(1,Model.WybranyDzien).ToString()" >>></a>
+                </td>
+            </tr>
+        </thead>
+    </table>
+    <table class="table table-bordered" style="min-width:321px">
+        @*<tbody style="overflow:auto; height:300px">
+                @for (int a = 8; a < 18; a++)
+                {
+                    <tr style="background-color:#29b6f6 ">
+                        <td>
+                            @a:00
+                        </td>
+                        <td colspan="2" align="center">Wolne</td>
+                        <td align="right"><button>Umów wizytę!</button></td>
+                    </tr>
+                }
+            </tbody>*@
+        <tbody style="overflow:auto; height:300px">
+            @for (int a = 8; a < 18; a++)
+            {
+                if (Model.UmowioneWizyty.Find(c => c.GodzinaWizyty.Hours == a) != null)
+                {
+                    var item = Model.UmowioneWizyty.Find(c => c.GodzinaWizyty.Hours == a);
+                    string inform;
+                    if (item.CzyPacjentByl == true) inform = "Wizyta odbyła się";
+                    else inform = "Wizyta nie odbyła się";
+                    <tr>
+                        <td align="center">
+                            @a:00
+                        </td>
+                        <td align="center">@item.ApplicationUser.Dane.Imie @item.ApplicationUser.Dane.Nazwisko</td>
+                        <td align="center"> <form asp-controller="Manage" asp-action="InfoOPacjencie" asp-route-id="@item.ApplicationUser.Id" asp-route-wiz="@item.IdUmowioneWizyty"><button class="btn btn-outline-success">Info</button></form></td>
+                        <td align="center">@inform</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr style=" min-height:50px ">
+                        <td align="center">
+                            @a:00
+                        </td>
+                        <td align="center">Wolny</td>
+                        <td colspan="2" align="center">Nie masz nikogo umówionego na ten termin</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

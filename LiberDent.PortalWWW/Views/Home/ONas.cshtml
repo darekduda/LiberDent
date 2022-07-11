@@ -1,0 +1,15 @@
+﻿@model LiberDent.Data.Data.CMS.ONas
+@{
+    ViewData["Title"] = "O nas";
+}
+    <div class="row text-center">
+        <center>
+            <h6 class="title">@Model.Naglowek</h6>
+            <br />
+            <p>@Model.Tresc1</p>
+            @if (Model.Tresc2 != "")
+            {
+                <p>@Model.Tresc2</p>
+            }
+        </center>
+    </div>

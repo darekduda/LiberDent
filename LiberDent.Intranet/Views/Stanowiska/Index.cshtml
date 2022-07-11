@@ -1,0 +1,41 @@
+﻿@model IEnumerable<LiberDent.Data.Data.Slownikowe.Stanowiska>
+
+@{
+    ViewData["Title"] = "Lista stanowisk";
+}
+
+<h6>Lista stanowisk</h6>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Utwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyStomatolog)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.CzyStomatolog)
+            </th>
+            <td>
+                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.IdStanowiska">Edytuj</a> |
+                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.IdStanowiska">Szczegóły</a> |
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.IdStanowiska">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

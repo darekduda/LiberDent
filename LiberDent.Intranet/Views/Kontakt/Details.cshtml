@@ -1,0 +1,54 @@
+﻿@model LiberDent.Data.Data.CMS.Kontakt
+
+@{
+    ViewData["Title"] = "Szczegóły";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Szczegóły</h6>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TytułKontakt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TytułKontakt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumerTelefonu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumerTelefonu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NazwaTelefonu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NazwaTelefonu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TrescKontaktu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TrescKontaktu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PozycjaWyswietlania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PozycjaWyswietlania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@Model.IdKontaktu">Edytuj</a> |
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>

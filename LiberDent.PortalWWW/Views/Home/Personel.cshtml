@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LiberDent.Data.Data.Account.ApplicationUser>
+@{
+    ViewData["Title"] = "Personel";
+}
+<h6 class="title">Nasz personel</h6>
+@{ foreach (var item in Model)
+    {
+        if ((item.DaneLekarza != null) && (item.Dane !=null))
+        {
+    <div class="col s12 m6">
+        <div class="card horizontal">
+            <div class="card-image zdjecieKarta">
+                <img class="zdjeciePersonel" src="https://wsb-nlu.clouda.edu.pl/Content/pliki/DanePracownik/439BeautyPlus_20200407183535374_save.jpg">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p>@item.DaneLekarza.Opis</p>
+                </div>
+                <div class="card-action">
+                    <a class="nav-link text-dark" asp-controller="Home" asp-action="InfoOPersonelu" asp-route-str="@item.Id">Wiecej info</a>
+                </div>
+            </div>
+        </div>
+        <h6 class="header" style="font-size:x-small">@item.Dane.Imie @item.Dane.Nazwisko</h6>
+    </div>
+            }
+        }
+    }
+
+    @*<div class="col s12 m6">
+
+        <div class="card horizontal">
+            <div class="card-image zdjecieKarta">
+                <img class="zdjeciePersonel" src="https://dummyimage.com/190x190/2c488f/ffffff&text=Image+1">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p>Krótki opis pracownika</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">link do info</a>
+                </div>
+            </div>
+        </div>
+        <h6 class="header">Imie i nazwisko</h6>
+    </div>*@

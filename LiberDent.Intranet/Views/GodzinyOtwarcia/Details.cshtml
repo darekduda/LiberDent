@@ -1,0 +1,48 @@
+﻿@model LiberDent.Data.Data.CMS.GodzinyOtwarcia
+
+@{
+    ViewData["Title"] = "Szczegóły";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Szczegóły</h6>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dzien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dzien)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GodzinaOtwarciaOd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GodzinaOtwarciaOd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GodzinaOtwarciaDo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GodzinaOtwarciaDo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PozycjaWyswietlania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PozycjaWyswietlania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@Model.IdGodzinyOtwarcia">Edytuj</a> |
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>

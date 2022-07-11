@@ -1,0 +1,32 @@
+﻿@model LiberDent.Data.Data.Slownikowe.PoziomUprawnien
+
+@{
+    ViewData["Title"] = "Usuń";
+}
+
+<h6>Usuń</h6>
+
+<h6>Jesteś pewien, że chcesz to usunąć?</h6>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumerUprawnien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumerUprawnien)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OpisUprawnien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OpisUprawnien)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPoziomUprawnien" />
+        <input type="submit" value="Usuń" class="btn btn-outline-danger" /> |
+        <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+    </form>
+</div>

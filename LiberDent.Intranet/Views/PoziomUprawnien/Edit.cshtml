@@ -1,0 +1,36 @@
+﻿@model LiberDent.Data.Data.Slownikowe.PoziomUprawnien
+
+@{
+    ViewData["Title"] = "Edytuj";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Edytuj</h6>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdPoziomUprawnien" />
+            <div class="form-group">
+                <label asp-for="NumerUprawnien" class="control-label"></label>
+                <input asp-for="NumerUprawnien" class="form-control" />
+                <span asp-validation-for="NumerUprawnien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpisUprawnien" class="control-label"></label>
+                <input asp-for="OpisUprawnien" class="form-control" />
+                <span asp-validation-for="OpisUprawnien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>
+

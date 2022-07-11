@@ -1,0 +1,16 @@
+﻿@model LiberDent.Data.Data.CMS.Powitanie
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row text-center">
+    <center>
+    <h6 class="title">@Model.NaglowekPowitalny</h6>
+    <br/>
+    <p>@Model.TrescPowitalna1</p>
+    @if(Model.TrescPowitalna2!="")
+    {
+        <p>@Model.TrescPowitalna2</p>
+    }
+    </center>
+</div>

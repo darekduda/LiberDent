@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LiberDent.Data.Data.CMS.CenyUslug>
+@{
+    ViewData["Title"] = "Cennik";
+}
+<h6 class="title">Ceny usług </h6>
+<br />
+<br />
+<div class="col m12 text-center" style="margin-left:20%">
+
+    <table class="responsive-table centered highlight tabelaceny" style="width:60%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NazwaUslugi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CenaUslugi)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NazwaUslugi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CenaUslugi)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,94 @@
+﻿@model LiberDent.PortalWWW.Models.AccountViewModel.RegisterViewModel
+@{
+    ViewData["Title"] = "Rejestracja";
+}
+<div class="row " id="centermargin">
+    <div class="col m12">
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            @*<div class="col m3">*@
+            <h6 class="title">Stwórz nowe konto.</h6>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="DaneUzytkownika.UserName"></label>
+            <input asp-for="DaneUzytkownika.UserName" class="form-control" />
+            <span asp-validation-for="DaneUzytkownika.UserName" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label class="title" asp-for="Email"></label>
+                <input asp-for="Email" class="inputStyle" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Password"></label>
+                <input asp-for="Password" class="inputStyle" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="inputStyle" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Dane.Imie"></label>
+                <input asp-for="Dane.Imie" class="inputStyle" />
+                <span asp-validation-for="Dane.Imie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Dane.Nazwisko"></label>
+                <input asp-for="Dane.Nazwisko" class="inputStyle" />
+                <span asp-validation-for="Dane.Nazwisko" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Dane.DataUrodzenia"></label>
+                <input type="date" asp-for="Dane.DataUrodzenia" class="inputStyle" />
+                <span asp-validation-for="Dane.DataUrodzenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Dane.NumerPESEL"></label>
+                <input asp-for="Dane.NumerPESEL" class="inputStyle" />
+                <span asp-validation-for="Dane.NumerPESEL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" class="inputStyle" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Adres.Miejscowosc"></label>
+                <input asp-for="Adres.Miejscowosc" class="inputStyle" />
+                <span asp-validation-for="Adres.Miejscowosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Adres.Ulica"></label>
+                <input asp-for="Adres.Ulica" class="inputStyle" />
+                <span asp-validation-for="Adres.Ulica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Adres.NumerDomu"></label>
+                <input asp-for="Adres.NumerDomu" class="inputStyle" />
+                <span asp-validation-for="Adres.NumerDomu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Adres.NumerLokalu"></label>
+                <input asp-for="Adres.NumerLokalu" class="inputStyle" />
+                <span asp-validation-for="Adres.NumerLokalu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Adres.KodPocztowy"></label>
+                <input asp-for="Adres.KodPocztowy" class="inputStyle" />
+                <span asp-validation-for="Adres.KodPocztowy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="title" asp-for="Adres.Poczta"></label>
+                <input asp-for="Adres.Poczta" class="inputStyle" />
+                <span asp-validation-for="Adres.Poczta" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn-flat light-blue lighten-1">Zarejestruj</button>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

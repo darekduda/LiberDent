@@ -1,0 +1,50 @@
+﻿@model LiberDent.Data.Data.CMS.GodzinyOtwarcia
+
+@{
+    ViewData["Title"] = "Usuń";
+}
+
+<h6>Usuń</h6>
+
+<h6>Jesteś pewien, że chcesz to usunąć?</h6>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dzien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dzien)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GodzinaOtwarciaOd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GodzinaOtwarciaOd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GodzinaOtwarciaDo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GodzinaOtwarciaDo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PozycjaWyswietlania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PozycjaWyswietlania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdGodzinyOtwarcia" />
+        <input type="submit" value="Usuń" class="btn btn-outline-danger" /> |
+        <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+    </form>
+</div>

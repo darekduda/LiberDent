@@ -1,0 +1,48 @@
+﻿@model LiberDent.PortalWWW.Models.ManageViewModel.IndexViewModel
+@{
+    ViewData["Title"] = "Profil";
+    ViewData.AddActivePage(ManageNavPages.Index);
+}
+
+<h6 class="title">@ViewData["Title"]</h6>
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+<div class="row">
+    <div class="col m12">
+        <section>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group fontStyle">
+                    <label class="title" asp-for="Username"></label>
+                    <input asp-for="Username" class="inputStyle" />
+                </div>
+                <div class="form-group">
+                    <label class="title" asp-for="Email"></label>
+                    @if (Model.IsEmailConfirmed)
+                    {
+                        <div class="input-group">
+                            <input  asp-for="Email" class="inputStyle" />
+                            <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
+                        </div>
+                    }
+                    else
+                    {
+                        <input asp-for="Email" class="inputStyle"/>
+                        <button asp-action="SendVerificationEmail" class="btn-flat light-blue lighten-1">Wyślij ponownie email z linkiem</button>
+                    }
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="title" asp-for="PhoneNumber"></label>
+                    <input asp-for="PhoneNumber" class="inputStyle" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                </div>
+                <button type="submit" class="btn-flat light-blue lighten-1">Zapisz zmiany</button>
+            </form>
+            </section>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

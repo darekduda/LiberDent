@@ -1,0 +1,56 @@
+﻿@model LiberDent.Data.Data.CMS.DaneOPersonelu
+
+@{
+    ViewData["Title"] = "Usuń";
+}
+
+<h6>Usuń</h6>
+
+<h6>Jesteś pewien, że chcesz to usunąć?</h6>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zdjecie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zdjecie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdTytulNaukowy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdTytulNaukowy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdStanowiska)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdStanowiska)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdDaneOPersonelu" />
+        <input type="submit" value="Usuń" class="btn btn-outline-danger" /> |
+        <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+    </form>
+</div>

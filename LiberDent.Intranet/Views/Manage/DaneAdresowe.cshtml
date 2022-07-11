@@ -1,0 +1,51 @@
+﻿
+@model LiberDent.Intranet.Models.Account.ManageViewModel.DaneAdresoweViewModel
+@{
+    ViewData["Title"] = "Moje dane adresowe";
+    ViewData.AddActivePage(ManageNavPages.DaneUzytkownika);
+}
+
+<h6>@ViewData["Title"]</h6>
+@*@Html.Partial("_StatusMessage", Model.StatusMessage)*@
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Adres.Miejscowosc"></label>
+                <input asp-for="Adres.Miejscowosc" class="form-control" />
+                <span asp-validation-for="Adres.Miejscowosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres.Ulica"></label>
+                <input asp-for="Adres.Ulica" class="form-control" />
+                <span asp-validation-for="Adres.Ulica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres.NumerDomu"></label>
+                <input asp-for="Adres.NumerDomu" class="form-control" />
+                <span asp-validation-for="Adres.NumerDomu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres.NumerLokalu"></label>
+                <input asp-for="Adres.NumerLokalu" class="form-control" />
+                <span asp-validation-for="Adres.NumerLokalu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres.KodPocztowy"></label>
+                <input asp-for="Adres.KodPocztowy" class="form-control" />
+                <span asp-validation-for="Adres.KodPocztowy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres.Poczta"></label>
+                <input asp-for="Adres.Poczta" class="form-control" />
+                <span asp-validation-for="Adres.Poczta" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Zapisz zmiany</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

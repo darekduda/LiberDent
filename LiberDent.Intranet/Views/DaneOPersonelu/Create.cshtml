@@ -1,0 +1,71 @@
+﻿@model LiberDent.Intranet.Models.DaneOPersoneluViewModel
+
+@{
+    ViewData["Title"] = "Dodaj nowy";
+}
+
+<h6>Dodaj nowy</h6>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DaneOPersonelu.Imie" class="control-label"></label>
+                <input asp-for="DaneOPersonelu.Imie" class="form-control" />
+                <span asp-validation-for="DaneOPersonelu.Imie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaneOPersonelu.Nazwisko" class="control-label"></label>
+                <input asp-for="DaneOPersonelu.Nazwisko" class="form-control" />
+                <span asp-validation-for="DaneOPersonelu.Nazwisko" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaneOPersonelu.Zdjecie" class="control-label"></label>
+                <input asp-for="DaneOPersonelu.Zdjecie" class="form-control" />
+                <span asp-validation-for="DaneOPersonelu.Zdjecie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaneOPersonelu.Opis" class="control-label"></label>
+                <input asp-for="DaneOPersonelu.Opis" class="form-control" />
+                <span asp-validation-for="DaneOPersonelu.Opis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaneOPersonelu.IdTytulNaukowy" class="control-label"></label>
+                <select asp-for="DaneOPersonelu.IdTytulNaukowy" class="form-control">
+                    @{
+                        foreach (var item in Model.TytulyNaukowe)
+                        {
+                            <option value="@item.IdTytulNaukowy">@item.Nazwa</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="DaneOPersonelu.IdTytulNaukowy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaneOPersonelu.IdStanowiska" class="control-label"></label>
+                <select asp-for="DaneOPersonelu.IdStanowiska" class="form-control">
+                    @{
+                        foreach (var item in Model.Stanowiska)
+                        {
+                            <option value="@item.IdStanowiska">@item.Nazwa</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="DaneOPersonelu.IdStanowiska" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

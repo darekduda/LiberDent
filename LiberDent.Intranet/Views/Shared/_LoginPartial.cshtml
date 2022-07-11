@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using LiberDent.Data.Data.Account
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="right">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Witaj @UserManager.GetUserName(User)!</a>
+    </li>
+    <li class="right" style="align-content:center; align-items:center">
+        <form asp-area="" asp-controller="Account" asp-action="Logout" asp- method="post" id="logoutForm" class="navbar-right">
+            <button type="submit" class="btn btn-outline-danger btn-sm" style="margin-top:20%;margin-bottom:auto">Wyloguj</button>
+
+        </form>
+    </li>
+}
+else
+{
+    @*<li class="right"><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Rejestracja</a></li>*@
+    <li class="right"><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Logowanie</a></li>
+}

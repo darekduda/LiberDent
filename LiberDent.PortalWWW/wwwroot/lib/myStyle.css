@@ -1,0 +1,70 @@
+﻿body {
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    font-size: 10pt;
+    padding: 20px;
+}
+
+header {
+    padding: 0 10%;
+    background-color: #29b6f6;
+}
+
+    header nav {
+        float: right;
+        width: auto;
+        background-color: #29b6f6;
+        min-height:65px;
+    }
+
+.pStyle {
+    text-align:center;
+}
+
+#logo-container {
+    float: left;
+    width: 200px;
+    min-width: 200px;
+    display: block;
+}
+
+#pierwszaGlownaPrawa {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+    background-color: #eeeeee;
+    padding: 3%;
+}
+
+#drugaGlownaPrawa {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+    background-color: #eeeeee;
+    padding: 3%;
+}
+
+#glownaLewa {
+    background-color: #eeeeee;
+    padding: 5%;
+    margin: 35px,0px,0px,0px;
+}
+
+#tabelakalendarz {
+    max-height: 300px;
+}
+
+#styledotdtabeli {
+    width: 14%;
+    text-align: center;
+    align-items: center;
+}
+
+#styleabelagodziny {
+    text-align: center;
+    vertical-align: central;
+    align-items: center;
+}
+
+#buttonExternalLogin {
+    background-color: #29b6f6;
+}

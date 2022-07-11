@@ -1,0 +1,14 @@
+﻿@model IEnumerable<LiberDent.Data.Data.CMS.Kontakt>
+    <section id="pierwszaGlownaPrawa" class="materialize-textarea">
+        @foreach (var item in Model)
+        {
+            <h6 class="title" style="text-align: center;"><span>@item.TytułKontakt</span></h6>
+            <hr />
+            <p  class="pStyle">
+                <strong>@item.NumerTelefonu - @item.NazwaTelefonu</strong>
+            </p>
+            <p class="pStyle">
+                @item.TrescKontaktu
+            </p>
+        }
+    </section>

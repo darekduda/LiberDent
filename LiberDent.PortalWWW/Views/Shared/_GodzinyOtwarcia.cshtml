@@ -1,0 +1,19 @@
+﻿@model IEnumerable<LiberDent.Data.Data.CMS.GodzinyOtwarcia>
+
+    <div id="drugaGlownaPrawa" class="materialize-textarea responsive-table">
+        <h6 class="title" style="text-align: center;"><span>Godziny otwarcia</span></h6>
+        <hr />
+        <table class="responsive-table">
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td  class="pStyle">@item.Dzien</td>
+                        <td  class="pStyle">@item.GodzinaOtwarciaOd</td>
+                        <td  class="pStyle">:</td>
+                        <td  class="pStyle">@item.GodzinaOtwarciaDo</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,22 @@
+﻿@using LiberDent.Data.Data.Account
+
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container-fluid">
+        <ul class="left hide-on-med-and-down">
+            <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="Index">Profil</a></li>
+            <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="ChangePassword">Hasło</a></li>
+            @if (hasExternalLogins)
+            {
+                <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="ExternalLogins">Sposoby logowania</a></li>
+            }
+            <li class="@ManageNavPages.DaneUzytkownikaNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="DaneUzytkownika">Moje dane osobowe</a></li>
+            <li class="@ManageNavPages.DaneAdresoweNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="DaneAdresowe">Moje dane adresowe</a></li>
+            <li class="@ManageNavPages.DaneLekarzaNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="DaneLekarza">Moje dane lekarza</a></li>
+            <li class="@ManageNavPages.MojeWizytyNavClass(ViewContext)"><a class="nav-link text-dark" asp-action="MojeWizyty">Moje wizyty</a></li>
+        </ul>
+    </div>
+</nav>

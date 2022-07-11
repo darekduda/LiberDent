@@ -1,0 +1,29 @@
+﻿@model LiberDent.Data.Data.Slownikowe.TytulNaukowy
+
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<h6>Szczegóły</h6>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Skrot)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Skrot)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@Model.IdTytulNaukowy">Edytuj</a> |
+    <a class="btn btn-outline-secondary" asp-action="Index">Powrót do listy</a>
+</div>

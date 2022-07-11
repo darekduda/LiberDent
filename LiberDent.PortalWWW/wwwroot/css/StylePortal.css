@@ -1,0 +1,236 @@
+﻿body {
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: x-small;
+    padding: 20px;
+}
+
+header {
+    padding: 0 10%;
+    background-color: #29b6f6;
+    
+}
+
+    header nav {
+        float: right;
+        width: auto;
+        background-color: #29b6f6;
+        min-height: 65px;
+        margin-bottom: 10px;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+    }
+
+button {
+    background-color: grey;
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 1.5rem;
+    width: 100%;
+    font-size: x-small;
+    margin: 0 0 8px 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: border .3s, -webkit-box-shadow .3s;
+    transition: border .3s, -webkit-box-shadow .3s;
+    transition: box-shadow .3s, border .3s;
+    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+}
+#centermargin { 
+    margin-left:33.33333333%;
+    width:33.33333333%;
+}
+.kalendarzstylemarginy{
+    margin-left:0;
+    margin-bottom:10px;
+    padding:unset;
+    padding:0 , 0 , 0 , 0;
+}
+
+.lewymargindowyrownania {
+    margin-left:
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tabelaceny {
+    width:60%;
+}
+
+.brand-logo {
+    margin-right:10px;
+}
+
+.zdjecieKarta {
+    min-width: 190px;
+    max-width: 190px;
+    width: 190px;
+}
+
+.zdjeciePersonel{
+    width:190px;
+}
+
+.pStyle {
+    text-align: center;
+    font-size: x-small;
+}
+
+.row .col.m3.no-pad-right {
+    padding: 0;
+    padding-left: 10px;
+}
+
+.header-image {
+    margin-bottom: 6px;
+    float:right
+}
+
+.fontStyle {
+    font-size: x-small;
+}
+
+.menuWewnetrzneCentralne {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+    .menuWewnetrzneCentralne ul {
+        clear: left;
+        float: left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: 50%;
+        text-align: center;
+    }
+
+        .menuWewnetrzneCentralne ul li {
+            display: block;
+            float: left;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            right: 50%;
+        }
+
+            .menuWewnetrzneCentralne ul li a {
+                display: block;
+                margin: 0 0 0 1px;
+                padding: 3px 10px;
+                text-decoration: none;
+                line-height: 20px;
+            }
+
+.tytulStyleFont{
+    font-size:1.15rem;
+}
+
+.inputStyle{
+    height:2rem;
+    font-size:x-small;
+    box-sizing:content-box;
+}
+
+#logo-container {
+    float: left;
+    width: 200px;
+    min-width: 200px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#pierwszaGlownaPrawa {
+    background-color: #eeeeee;
+    padding: 3%;
+    margin-bottom: 10px;
+}
+
+#drugaGlownaPrawa {
+    background-color: #eeeeee;
+    padding: 3%;
+}
+
+#glownaLewa {
+    background-color: #eeeeee;
+    padding: 2%;
+    
+}
+
+#tabelakalendarz {
+    max-height: 300px;
+}
+
+#styledotdtabeli {
+    width: 14%;
+    text-align: center;
+    align-items: center;
+}
+
+#styleabelagodziny {
+    text-align: center;
+    vertical-align: central;
+    align-items: center;
+}
+
+#buttonExternalLogin {
+    background-color: #29b6f6;
+}
